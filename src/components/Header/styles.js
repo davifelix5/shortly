@@ -12,7 +12,7 @@ export const Container = styled.header`
 
 export const Burguer = styled.button`
   background: none;
-  @media (min-width: 1375px) {
+  @media (min-width: 1350px) {
     display: none;
   }
 `
@@ -40,7 +40,7 @@ export const Navbar = styled.nav`
   }
   transition: all 0.4s;
 
-  @media (min-width: 1375px) {
+  @media (min-width: 1350px) {
 
   }
 `
