@@ -7,6 +7,7 @@ export const ImageContainer = styled.div`
     width: 130%;
     margin-left: 10px;
   }
+  overflow: hidden;
 `
 
 export const Content = styled.div`
