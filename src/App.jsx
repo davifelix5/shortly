@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Form from './components/Form'
+import Statistics from './components/Statistics'
 
 import { ThemeProvider } from 'styled-components'
 
@@ -12,6 +13,7 @@ export default function App() {
       <Header />
       <Hero />
       <Form />
+      <Statistics />
     </ThemeProvider>
   )
 }
