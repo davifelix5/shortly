@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-const mobileFormBackgroundUrl = 'src/assets/images/bg-shorten-mobile.svg'
-const formBackgroundUrl = 'src/assets/images/bg-shorten-desktop.svg'
+import mobileFormBackgroundUrl from '../../assets/images/bg-shorten-mobile.svg'
+import formBackgroundUrl from '../../assets/images/bg-shorten-desktop.svg'
 
 export const Container = styled.form`
   background: ${({theme}) => theme.primaryViolet } url(${mobileFormBackgroundUrl}) no-repeat top right / 200px;
