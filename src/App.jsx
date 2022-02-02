@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 import { ThemeProvider } from 'styled-components'
 
@@ -8,6 +9,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
+      <Hero />
     </ThemeProvider>
   )
 }
