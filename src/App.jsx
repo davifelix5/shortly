@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Form from './components/Form'
 
 import { ThemeProvider } from 'styled-components'
 
@@ -10,6 +11,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Hero />
+      <Form />
     </ThemeProvider>
   )
 }
