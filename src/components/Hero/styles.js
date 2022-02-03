@@ -36,7 +36,7 @@ export const Title = styled.h1`
   color: ${({theme}) => theme.veryDarkBlue };
   margin-bottom: 0.5rem;
   @media (min-width: 1350px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 `
 
