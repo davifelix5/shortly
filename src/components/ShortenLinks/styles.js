@@ -7,6 +7,9 @@ export const Container = styled.div`
   background-color: ${({theme}) => theme.lightGrey };
   display: flex;
   flex-direction: column;
+  @media (min-width: 1350px) {
+    padding: 0 8rem;
+  }
 `
 
 export const Form = styled.form`
@@ -14,10 +17,22 @@ export const Form = styled.form`
   border-radius: 16px;
   margin: -4rem 1rem 1rem;
   padding: 1rem;
+
+  @media (min-width: 1350px) {
+    background: ${({theme}) => theme.primaryViolet } url(${formBackgroundUrl}) no-repeat center / cover;
+
+    margin: -2rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 `
 
 export const InputControl = styled.div`
- margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  @media (min-width: 1350px) {
+    width: 100%;
+    margin: 0;
+  }
 `
 
 export const ErrorMessage = styled.p`
@@ -50,10 +65,21 @@ export const Button = styled.button`
   background-color: ${({theme}) => theme.primaryCyan };
   color: #FFF;
   font-size: 1rem;
+  border-radius: 4px;
+  @media (min-width: 1350px) {
+    width: 15rem;
+    margin-left: 1rem;
+    &:hover {
+      background-color: ${({theme}) => theme.lightCyan };
+    }
+  }
 `
 
 export const Links = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0 1rem;
+  @media (min-width: 1350px) {
+    margin: 0;
+  }
 `

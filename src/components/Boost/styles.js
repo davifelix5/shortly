@@ -9,6 +9,10 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  @media (min-width: 1350px) {
+    padding: 2rem 1rem;
+    background: ${({theme}) => theme.primaryViolet } url(${background}) center / cover;
+  }
 `
 
 export const Title = styled.h1`
@@ -22,4 +26,9 @@ export const Button = styled.button`
   border-radius: 64px;
   color: #FFF;
   font-weight: bold;
+  @media (min-width: 1350px) {
+    &:hover {
+      background-color: ${({theme}) => theme.lightCyan };
+    }
+  }
 `
