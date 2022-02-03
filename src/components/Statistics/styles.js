@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.section`
   position: relative;
   background-color: ${({theme}) => theme.lightGrey };;
-  padding: 8rem 0 4rem;
-  margin-top: -8rem;
+  padding: 4rem 0;
   z-index: -100;
 `
 

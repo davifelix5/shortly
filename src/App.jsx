@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Form from './components/Form'
+import ShortenLinks from './components/ShortenLinks'
 import Statistics from './components/Statistics'
 import Boost from './components/Boost'
 import Footer from './components/Footer'
@@ -14,7 +14,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Hero />
-      <Form />
+      <ShortenLinks />
       <Statistics />
       <Boost />
       <Footer />

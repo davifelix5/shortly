@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const Container = styled.section``
+export const Container = styled.section`
+  padding-bottom: 8rem;
+`
 
 export const ImageContainer = styled.div`
   img {
