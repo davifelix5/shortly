@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Form from './components/Form'
 import Statistics from './components/Statistics'
 import Boost from './components/Boost'
+import Footer from './components/Footer'
 
 import { ThemeProvider } from 'styled-components'
 
@@ -16,6 +17,7 @@ export default function App() {
       <Form />
       <Statistics />
       <Boost />
+      <Footer />
     </ThemeProvider>
   )
 }
