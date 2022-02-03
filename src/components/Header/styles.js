@@ -92,6 +92,9 @@ export const Link = styled.li`
 
   @media (min-width: 1350px) {
     font-weight: 500;
+    a {
+      color: ${({theme}) => theme.greyViolet };
+    }
     a:hover {
       color: ${({theme}) => theme.veryDarkBlue };
     }
