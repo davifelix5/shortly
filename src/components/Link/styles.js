@@ -54,7 +54,7 @@ export const CopyButton = styled.button`
   @media (min-width: 1350px) {
     padding: 0.3rem 1rem;
     &:hover {
-      background-color: ${({theme}) => theme.lightCyan };
+      ${({copied, theme}) => copied ? `opacity: 0.8` : `background-color: ${theme.lightCyan}` };
     }
   }
 `

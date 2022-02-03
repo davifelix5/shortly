@@ -47,6 +47,7 @@ export default function ShortenLinks() {
       const { full_short_link } = await shortenLink(inputedLink)
       const newLink = { original: inputedLink, shortened: full_short_link }
       setLinks(links => [...links, newLink])
+      setInputedLink('')
     } catch (err) {
       const { data: { error_code } } = err.response
       if (error_code === LINK_NOT_INFORMED_ERROR_CODE || error_code === INVALID_LINK_ERROR_CODE) {
