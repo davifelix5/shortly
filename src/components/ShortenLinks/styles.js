@@ -20,7 +20,7 @@ export const Form = styled.form`
 
   @media (min-width: 1350px) {
     background: ${({theme}) => theme.primaryViolet } url(${formBackgroundUrl}) no-repeat center / cover;
-
+    padding: 2rem;
     margin: -2rem 0 1rem;
     display: flex;
     justify-content: space-between;
