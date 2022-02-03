@@ -66,6 +66,11 @@ export const Button = styled.button`
   color: #FFF;
   font-size: 1rem;
   border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @media (min-width: 1350px) {
     width: 15rem;
     margin-left: 1rem;
@@ -81,5 +86,26 @@ export const Links = styled.ul`
   margin: 0 1rem;
   @media (min-width: 1350px) {
     margin: 0;
+  }
+`
+
+export const Loader = styled.div`
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: ${({theme}) => theme.primaryVioler };
+  border-top-color: ${({theme}) => theme.grey };
+
+  animation: spin 1s infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
   }
 `

@@ -10,24 +10,50 @@ import {
   Input,
   Button,
   Links,
+  Loader,
 } from './styles'
+
+import api from '../../services/api'
 
 export default function ShortenLinks() {
 
   const [error, setError] = useState('')
-  const [links, setLinks] = useState([
-    {
-      original: 'https://frontendmentor.io',
-      shortened: 'https://rel.ink/k4lKyk'
-    },
-    {
-      original: 'https://github.com/davifelix5',
-      shortened: 'https://rel.ink/j7l1Kk'
-    }
-  ])
+  const [inputedLink, setInputedLink] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [links, setLinks] = useState([])
 
-  function handleShortenSubmit(event) {
+  async function shortenLink(link) {
+    const { data } = await api.get('shorten', {
+      params: {
+        url: link
+      }
+    })
+
+    return data.result
+
+  }
+
+  async function handleShortenSubmit(event) {
     event.preventDefault()
+
+    const LINK_NOT_INFORMED_ERROR_CODE = 1
+    const INVALID_LINK_ERROR_CODE = 2
+
+    try {
+      setError('')
+      setLoading(true)
+      const { full_short_link } = await shortenLink(inputedLink)
+      const newLink = { original: inputedLink, shortened: full_short_link }
+      setLinks(links => [...links, newLink])
+    } catch (err) {
+      const { data: { error_code } } = err.response
+      if (error_code === LINK_NOT_INFORMED_ERROR_CODE || error_code === INVALID_LINK_ERROR_CODE) {
+        return setError('Please, inform a valid link')
+      }
+      setError('There has been an error')
+    } finally {
+      setLoading(false)
+    }
   }
 
   function getLinkCode(link) {
@@ -38,10 +64,15 @@ export default function ShortenLinks() {
     <Container>
       <Form onSubmit={handleShortenSubmit}>
         <InputControl>
-          <Input error={Boolean(error)} placeholder="Shorten your link here..." />
+          <Input 
+            error={Boolean(error)} 
+            placeholder="Shorten your link here..." 
+            value={inputedLink} 
+            onChange={event => setInputedLink(event.target.value)}
+          />
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </InputControl>
-        <Button type="submit">Shorten It!</Button>
+        <Button type="submit">{loading ? <Loader /> : 'Shorten It!'}</Button>
       </Form>
       <Links>
         {links.map(link => {
