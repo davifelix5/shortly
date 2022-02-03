@@ -15,12 +15,14 @@ import {
 
 import api from '../../services/api'
 
+import usePersistedState from '../../hooks/usePersistedState'
+
 export default function ShortenLinks() {
 
   const [error, setError] = useState('')
   const [inputedLink, setInputedLink] = useState('')
   const [loading, setLoading] = useState(false)
-  const [links, setLinks] = useState([])
+  const [links, setLinks] = usePersistedState([], 'SHORTLY__links')
 
   async function shortenLink(link) {
     const { data } = await api.get('shorten', {
